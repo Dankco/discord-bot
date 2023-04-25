@@ -36,7 +36,7 @@ client.on('messageCreate', message => {
     return
   }
   const content = message.content.toLowerCase();
-  const msg_number = msgs.length-1;
+  const msg_number = Math.floor(Math.random() * msgs.length);
   const feed_msg_number = Math.floor(Math.random() * feed_msgs.length)
   const where_yanyulun = 'where is my yanyulun'
   if(content.match(where_yanyulun))
