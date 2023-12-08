@@ -28,8 +28,8 @@ yanyulun = './public/Yanyulun.png'
 const msgs = ["https://www.youtube.com/watch?v=Rpc-ZIRcUrA", "Yan of the Yulun Family", "Where's my Yanyulun?", 
 "Yanyuliners for dinner!", "Yulun some Yulose some", "My name is Yanyulun!", "Pogyulun!", 
 "This is true!", "倒霉",  'in the psych ward, 13cs', "the mid lane doesn’t exist!", 
-{ files: [man_bot] }, {content: "Subscribe to yanyulun's new Youtube channel!",files: [subscribe]}, '嚴雨倫', '嚴雨倫在哪裡?'];
-const feed_msgs = ["霉倒", "我的嚴雨倫沒了", "哎呀!"]
+{ files: [man_bot] }, { content: "Subscribe to yanyulun's new Youtube channel!", files: [subscribe] }, '嚴雨倫', '嚴雨倫在哪裡?', { files: [yanyulun] }];
+const feed_msgs = ["霉倒", "我的嚴雨倫沒了", "哎呀!", { files: [yanyulun] }]
 
 client.on('messageCreate', message => {
   if (message.author.bot) {
