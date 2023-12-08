@@ -32,34 +32,37 @@ const msgs = ["https://www.youtube.com/watch?v=Rpc-ZIRcUrA", "Yan of the Yulun F
 const feed_msgs = ["霉倒", "我的嚴雨倫沒了", "哎呀!"]
 
 client.on('messageCreate', message => {
-  if(message.author.bot)
-  {
+  if (message.author.bot) {
     return
   }
   const content = message.content.toLowerCase();
   const msg_number = Math.floor(Math.random() * msgs.length);
   const feed_msg_number = Math.floor(Math.random() * feed_msgs.length)
-  const where_yanyulun = 'where is my yanyulun'
-  if(content.match(where_yanyulun))
-  {
+  const where_yanyulun = /where(\'?s|| is) my yanyulun/g;
+  const feed = /\b(feeding|inting|inter|feeder)\b/g;
+  const pogyulun = /\bpogyulun\b/g;
+  const yulu = /\byulu\b/g;
+  if (content.match(where_yanyulun)) {
     // First use guild.members.fetch to make sure all members are cached
     message.guild.members.fetch({ withPresences: true }).then(fetchedMembers => {
-    	const totalOnline = fetchedMembers.filter(member => member.presence?.status === 'online');
+      const totalOnline = fetchedMembers.filter(member => member.presence?.status === 'online');
       const id = '345656455031947264'
-    	// Now you have a collection with all online member objects in the totalOnline variable
+      // Now you have a collection with all online member objects in the totalOnline variable
       const found = totalOnline.filter(item => item.id == id);
       const ids = found.map(user => user.id);
-      if(ids.length > 0)
+      if (ids.length > 0)
         message.channel.send("Yanyulun is here!");
       else
         message.channel.send("Yanyulun mei le!");
     });
-  } else if(content.match("feeding") || content.match("inting"))
-  {
+  } else if (content.match(feed)) {
     message.channel.send(feed_msgs[feed_msg_number]);
+  } else if (content.match(pogyulun)) {
+    message.channel.send("Pogyulun!");
+  } else if (content.match(yulu)) {
+    message.channel.send("Yulu Hulu Disney+");
   }
-  else if(content.match('yanyulun'))
-  {
+  else if (content.match('yanyulun')) {
     message.channel.send(msgs[msg_number]);
   }
 });
