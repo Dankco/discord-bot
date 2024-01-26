@@ -24,7 +24,7 @@ const client = new Client({
 
 man_bot = './public/4_man_bot.png'
 subscribe = './public/subscribe.png'
-yanyulun = './public/Yanyulun.png'
+yanyulun = './public/Yanyulun.jpg'
 const msgs = ["https://www.youtube.com/watch?v=Rpc-ZIRcUrA", "Yan of the Yulun Family", "Where's my Yanyulun?", 
 "Yanyuliners for dinner!", "Yulun some Yulose some", "My name is Yanyulun!", "Pogyulun!", 
 "This is true!", "倒霉",  'in the psych ward, 13cs', "the mid lane doesn’t exist!", 
